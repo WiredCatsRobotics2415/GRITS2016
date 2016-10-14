@@ -21,4 +21,10 @@ public class RobotMap {
 	public static final int BACK_RIGHT_TALON = 1;
 	public static final int FRONT_LEFT_TALON = 2;
 	public static final int FRONT_RIGHT_TALON = 3;
+	
+	public static final int PCM_ID = 20;
+	public static final int SOLENOID_1 = 0;
+	public static final int SOLENOID_2 = 1;
+	public static final int SOLENOID_3 = 2;
+	public static final int SOLENOID_4 = 3;
 }

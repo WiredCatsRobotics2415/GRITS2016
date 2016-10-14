@@ -1,6 +1,9 @@
 
 package org.usfirst.frc.team2415.robot;
 
+import org.usfirst.frc.team2415.robot.commands.FireCatapultCommand;
+import org.usfirst.frc.team2415.robot.commands.RestingCommand;
+import org.usfirst.frc.team2415.robot.subsystems.CatapultSubsystem;
 import org.usfirst.frc.team2415.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team2415.utilities.WiredCatGamepad;
 import org.usfirst.frc.team2415.utilities.WiredCatJoystick;
@@ -22,6 +25,7 @@ public class Robot extends IterativeRobot {
 	public static WiredCatJoystick joystick;
 	
 	public static DriveSubsystem driveSubsystem;
+	public static CatapultSubsystem catapultSubsystem;
 	
 
     /**
@@ -35,6 +39,9 @@ public class Robot extends IterativeRobot {
     	joystick = new WiredCatJoystick(0);
     	
     	driveSubsystem = new DriveSubsystem();
+    	
+    	joystick.trigger.whenPressed(new FireCatapultCommand());
+    	joystick.trigger.whenInactive(new RestingCommand());
     }
 	
 	/**
